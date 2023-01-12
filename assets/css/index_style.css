@@ -1,0 +1,42 @@
+::selection {
+    color: #eacbc7;
+    background: #1f2328;
+}
+
+.bg-image {
+    background: linear-gradient(rgb(0, 0, 0), rgba(0, 0, 0, 0)), url("../Images/main-bg.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    width: auto;
+}
+
+p.big-font-size {
+    font-size: 100px;
+    letter-spacing: 5px;
+}
+
+p.justify-text {
+    text-align: justify;
+}
+
+section#image-of-the-day {
+    background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.836)), url("/assets/Images/section2-bg.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    width: auto;
+}
+
+@media only screen and (max-width: 1024px) {
+    .bg-image {
+        background-image: linear-gradient( rgba(0, 0, 0, 0.363), rgba(0, 0, 0, 0.363)), url("../Images/main-bg-mobile.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        object-fit: contain;
+        background-position: center;
+    }
+    p.big-font-size {
+        font-size: 50px;
+    }
+}
