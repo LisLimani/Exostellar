@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
     <link rel="stylesheet" href="../assets/css/index_style.css" />
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
     <link rel="icon" type="image/png" href="../assets/Images/favicon-16x16.png" sizes="16x16" />
     <link rel="icon" type="image" href="../assets/Images/favicon-32x32.png" sizes="32x32" />
 
@@ -15,7 +15,7 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
             <a class="navbar-brand letter-spacing lead " href="../HTML/index.html"><img class="img-fluid pe-5 logo-size" src="../assets/Images/main-logo.svg">Exostellar</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -28,15 +28,15 @@
                         <a class="nav-link active px-4 fw-light" aria-current="page" href="../HTML/index.html">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active px-4 fw-light" href="#">Gallery</a>
+                        <a class="nav-link active px-4 fw-light" href="../HTML/gallery.html">Gallery</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle active px-4 fw-light" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   More
                 </a>
                         <ul class="dropdown-menu active">
-                            <li><a class="dropdown-item fw-light " href="#">About</a></li>
-                            <li><a class="dropdown-item  fw-light" href="#">Our Mission</a></li>
+                            <li><a class="dropdown-item fw-light " href="../HTML/about.html">About</a></li>
+                            <li><a class="dropdown-item  fw-light" href="../HTML/mission.html">Our Mission</a></li>
 
 
                         </ul>
@@ -54,12 +54,64 @@
         </div>
     </nav>
 
-    <main>
+    <main class="bg-image">
+        <div class="container">
+            <div class="row justify-content-center align-items-center " style="min-height: 100vh">
+                <p class="text-white big-font-size"><strong>Explore</strong> the Universe with the amazing pictures provdided by <strong>NASA</strong></p>
+            </div>
 
     </main>
 
+    <section id="image-of-the-day">
+        <div class="container">
+            <div class="row" id="pictureApod">
 
-    <script src="../assets/js/bootstrap.bundle.min.js"></script>
+            </div>
+        </div>
+    </section>
+
+
+    <script src="../assets/js/bootstrap.bundle.min.js "></script>
+
+    <script>
+        let picture_html = '';
+        fetch('https://api.nasa.gov/planetary/apod?api_key=YeqVYlDEjEf22sI5i1T3SE6yzErSaFDP2akpZZ72')
+            .then(response => response.json())
+            .then(picture => {
+                const pictureApod = picture;
+
+                let url_string = picture.hdurl;
+
+                picture_html += `
+                <div class="card mb-3 mt-5" style="max-width: 3096px; ">
+                    <div class="apod-text">
+                        <p class="h1 display-5 text-center my-3 "> Astronomy Picture of the Day</p>
+                    </div>
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                        <img src="${picture.url}" class="img-fluid rounded-start mb-3" alt="${picture.title}">
+                        </div>
+                        <div class="col-md-8">
+                        <div class="card-body p-lg-5 p-md-2 p-sm-0 ">
+                            <h3 class="my-3 card-title">${picture.title}</h3>
+                            <p class="card-text justify-text">${picture.explanation}</p>
+                            <p class="card-text"><small class="text-muted">${picture.date}</small></p>
+                            <p class="card-text"><small class="text-muted">&copy${picture.copyright}</small></p>
+                          
+                        </div>
+                        <div class="p-lg-5 p-md-2 p-sm-0" >
+                            <h6>Click on the link below to view with higher resolution:</h6>
+                            <a id="url" href="${url_string}">Click Me</a>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                
+                `
+                document.getElementById('pictureApod').innerHTML = picture_html;
+                document.getElementById("url").innerHTML = url_string;
+            });
+    </script>
 </body>
 
 </html>
