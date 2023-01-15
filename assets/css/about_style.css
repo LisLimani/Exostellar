@@ -1,0 +1,33 @@
+@import url("style_assets.css");
+.about-bg-image {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.363), rgba(0, 0, 0, 0.363)), url("../Images/about-main-bg.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    width: auto;
+    background-size: cover;
+}
+
+i.fa-html5 {
+    color: orangered;
+    padding-right: 10px;
+    font-size: 50px;
+}
+
+i.fa-css3-alt {
+    color: rgb(66, 66, 248);
+    padding-right: 10px;
+    font-size: 50px;
+}
+
+i.fa-bootstrap {
+    color: purple;
+    padding-right: 10px;
+    font-size: 50px;
+}
+
+i.fa-js {
+    color: rgb(255, 217, 0);
+    padding-right: 10px;
+    font-size: 50px;
+}
