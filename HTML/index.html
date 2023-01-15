@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../assets/css/index_style.css" />
     <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
     <link rel="icon" type="image/png" href="../assets/Images/favicon-16x16.png" sizes="16x16" />
     <link rel="icon" type="image" href="../assets/Images/favicon-32x32.png" sizes="32x32" />
 
@@ -64,53 +65,46 @@
 
     <section id="image-of-the-day">
         <div class="container">
-            <div class="row" id="pictureApod">
+            <div class="row align-items-center " style="min-height: 100vh" id="pictureApod">
 
             </div>
         </div>
     </section>
 
+    <section id="footer-section">
+        <footer class="bg-light text-center text-lg-start">
+            <div class="container">
+                <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+                    <div class="col-md-4 d-flex align-items-center">
+                        <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
+                            <svg class="bi" width="30" height="24"><use xlink:href="#bootstrap"></use></svg>
+                        </a>
+                        <span class="mb-3 mb-md-0 text-muted">EXOSTELLAR</span>
+                    </div>
+                    <ul class="nav col-md-4 justify-content-center list-unstyled d-flex">
+                        <li class="ms-3"><a class="text-muted" href="../HTML/index.html">Home</a></li>
+                        <li class="ms-3"><a class="text-muted" href="../HTML/about.html">About</a></li>
+                        <li class="ms-3"><a class="text-muted" href="../HTML/mission.html">Our Mission</a></li>
+                        <li class="ms-3"><a class="text-muted" href="../HTML/gallery.html">Gallery</a></li>
+                    </ul>
+                    <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+                        <li class="ms-3"><a class="text-muted" href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                        <li class="ms-3"><a class="text-muted" href="#"><i class="fa-brands fa-facebook"></i></a></li>
+                        <li class="ms-3"><a class="text-muted" href="#"><i class="fa-brands fa-space-awesome"></i></a></li>
+                    </ul>
+                </footer>
+            </div>
+
+        </footer>
+    </section>
+
 
     <script src="../assets/js/bootstrap.bundle.min.js "></script>
 
-    <script>
-        let picture_html = '';
-        fetch('https://api.nasa.gov/planetary/apod?api_key=YeqVYlDEjEf22sI5i1T3SE6yzErSaFDP2akpZZ72')
-            .then(response => response.json())
-            .then(picture => {
-                const pictureApod = picture;
+    <script type="module">
 
-                let url_string = picture.hdurl;
+        import{getApodPicture} from '../modules/apod.js'; const divApod = document.getElementById('pictureApod'); getApodPicture(divApod);
 
-                picture_html += `
-                <div class="card mb-3 mt-5" style="max-width: 3096px; ">
-                    <div class="apod-text">
-                        <p class="h1 display-5 text-center my-3 "> Astronomy Picture of the Day</p>
-                    </div>
-                    <div class="row g-0">
-                        <div class="col-md-4">
-                        <img src="${picture.url}" class="img-fluid rounded-start mb-3" alt="${picture.title}">
-                        </div>
-                        <div class="col-md-8">
-                        <div class="card-body p-lg-5 p-md-2 p-sm-0 ">
-                            <h3 class="my-3 card-title">${picture.title}</h3>
-                            <p class="card-text justify-text">${picture.explanation}</p>
-                            <p class="card-text"><small class="text-muted">${picture.date}</small></p>
-                            <p class="card-text"><small class="text-muted">&copy${picture.copyright}</small></p>
-                          
-                        </div>
-                        <div class="p-lg-5 p-md-2 p-sm-0" >
-                            <h6>Click on the link below to view with higher resolution:</h6>
-                            <a id="url" href="${url_string}">Click Me</a>
-                            </div>
-                        </div>
-                    </div>
-                    </div>
-                
-                `
-                document.getElementById('pictureApod').innerHTML = picture_html;
-                document.getElementById("url").innerHTML = url_string;
-            });
     </script>
 </body>
 
