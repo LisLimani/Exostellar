@@ -16,3 +16,11 @@ p.medium-font-size {
 p.justify-text {
     text-align: justify;
 }
+
+img.nasaImg {
+    object-fit: cover;
+    width: 500px;
+    height: 300px;
+    /* display: grid;
+    grid-template-columns: repeat(3, 1fr); */
+}
