@@ -16,6 +16,12 @@
 </head>
 
 <body>
+
+    <div class="preloader">
+        <video playsinline autoplay muted loop>
+        <source src="../assets/videos/Animation Spaceship Flies At The Speed Of Light Through A Galaxy In Space Billion 4k.mp4 "  type="video/mp4">
+    </video>
+    </div>
     <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
             <a class="navbar-brand letter-spacing lead " href="../HTML/index.html"><img class="img-fluid pe-5 logo-size" src="../assets/Images/main-logo.svg">Exostellar</a>
@@ -58,54 +64,57 @@
     <main class="bg-image">
         <div class="container">
             <div class="row justify-content-center align-items-center " style="min-height: 100vh">
-                <p class="text-white big-font-size"><strong>Explore</strong> the Universe with the amazing pictures provdided by <strong>NASA</strong></p>
+                <p class="text-white big-font-size"><strong><span id="text-main-typing">Explore</span></strong> the Universe with the amazing pictures provdided by <strong>NASA</strong></p>
             </div>
 
-    </main>
+</body>
 
-    <section id="image-of-the-day">
-        <div class="container">
-            <div class="row align-items-center " style="min-height: 100vh" id="pictureApod">
+</main>
 
-            </div>
+<section id="image-of-the-day">
+    <div class="container">
+        <div class="row align-items-center " style="min-height: 100vh" id="pictureApod">
+
         </div>
-    </section>
+    </div>
+</section>
 
-    <section id="footer-section">
-        <footer class="bg-light text-center text-lg-start">
-            <div class="container">
-                <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-                    <div class="col-md-4 d-flex align-items-center">
-                        <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
-                            <svg class="bi" width="30" height="24"><use xlink:href="#bootstrap"></use></svg>
-                        </a>
-                        <span class="mb-3 mb-md-0 text-muted">EXOSTELLAR</span>
-                    </div>
-                    <ul class="nav col-md-4 justify-content-center list-unstyled d-flex">
-                        <li class="ms-3"><a class="text-muted" href="../HTML/index.html">Home</a></li>
-                        <li class="ms-3"><a class="text-muted" href="../HTML/about.html">About</a></li>
-                        <li class="ms-3"><a class="text-muted" href="../HTML/mission.html">Our Mission</a></li>
-                        <li class="ms-3"><a class="text-muted" href="../HTML/gallery.html">Gallery</a></li>
-                    </ul>
-                    <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
-                        <li class="ms-3"><a class="text-muted" href="#"><i class="fa-brands fa-instagram"></i></a></li>
-                        <li class="ms-3"><a class="text-muted" href="#"><i class="fa-brands fa-facebook"></i></a></li>
-                        <li class="ms-3"><a class="text-muted" href="#"><i class="fa-brands fa-space-awesome"></i></a></li>
-                    </ul>
-                </footer>
-            </div>
+<section id="footer-section">
+    <footer class="bg-light text-center text-lg-start">
+        <div class="container">
+            <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+                <div class="col-md-4 d-flex align-items-center">
+                    <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
+                        <svg class="bi" width="30" height="24"><use xlink:href="#bootstrap"></use></svg>
+                    </a>
+                    <span class="mb-3 mb-md-0 text-muted">EXOSTELLAR</span>
+                </div>
+                <ul class="nav col-md-4 justify-content-center list-unstyled d-flex">
+                    <li class="ms-3"><a class="text-muted" href="../HTML/index.html">Home</a></li>
+                    <li class="ms-3"><a class="text-muted" href="../HTML/about.html">About</a></li>
+                    <li class="ms-3"><a class="text-muted" href="../HTML/mission.html">Our Mission</a></li>
+                    <li class="ms-3"><a class="text-muted" href="../HTML/gallery.html">Gallery</a></li>
+                </ul>
+                <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+                    <li class="ms-3"><a class="text-muted" href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                    <li class="ms-3"><a class="text-muted" href="#"><i class="fa-brands fa-facebook"></i></a></li>
+                    <li class="ms-3"><a class="text-muted" href="#"><i class="fa-brands fa-space-awesome"></i></a></li>
+                </ul>
+            </footer>
+        </div>
 
-        </footer>
-    </section>
+    </footer>
+</section>
 
 
-    <script src="../assets/js/bootstrap.bundle.min.js "></script>
+<script src="../assets/js/bootstrap.bundle.min.js "></script>
+<script src="../modules/preloader.js"></script>
 
-    <script type="module">
+<script type="module">
 
-        import{getApodPicture} from '../modules/apod.js'; const divApod = document.getElementById('pictureApod'); getApodPicture(divApod);
+    import{getApodPicture} from '../modules/apod.js'; const divApod = document.getElementById('pictureApod'); getApodPicture(divApod);
 
-    </script>
+</script>
 </body>
 
 </html>
