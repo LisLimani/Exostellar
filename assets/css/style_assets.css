@@ -1,26 +1,49 @@
 ::selection {
-    color: #eacbc7;
-    background: #1f2328;
+  color: #eacbc7;
+  background: #1f2328;
 }
 
 p.big-font-size {
-    font-size: 100px;
-    letter-spacing: 5px;
+  font-size: 100px;
+  letter-spacing: 5px;
 }
 
 p.medium-font-size {
-    font-size: 50px;
-    letter-spacing: 5px;
+  font-size: 50px;
+  letter-spacing: 5px;
 }
 
 p.justify-text {
-    text-align: justify;
+  text-align: justify;
 }
 
 img.nasaImg {
-    object-fit: cover;
-    width: 500px;
-    height: 300px;
-    /* display: grid;
+  object-fit: cover;
+  width: 500px;
+  height: 300px;
+  /* display: grid;
     grid-template-columns: repeat(3, 1fr); */
+}
+
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  /* background: lightgrey; */
+  height: 100%;
+  width: 100%;
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+}
+
+.disppear {
+  animation: vanish 20s forwards;
+}
+
+@keyframes vanish {
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
 }
