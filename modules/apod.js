@@ -1,6 +1,6 @@
 export function getApodPicture(div) {
     fetch(
-            "https://api.nasa.gov/planetary/apod?api_key=YeqVYlDEjEf22sI5i1T3SE6yzErSaFDP2akpZZ72"
+            `https://api.nasa.gov/planetary/apod?api_key=dlFoet3QMGqg067fIrcptT5dHqbfzbVhWgoaiaM8`
         )
         .then((response) => response.json())
         .then((picture) => {
