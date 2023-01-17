@@ -1,0 +1,8 @@
+.mission-bg-image {
+  background: linear-gradient(rgba(0, 0, 0, 0.726), rgba(0, 0, 0, 0)),
+    url("../Images/mission.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  width: auto;
+}
